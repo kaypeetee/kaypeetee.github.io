@@ -1,92 +1,231 @@
-#nav {
-    display: inline-block;
-    background: linear-gradient(90.9deg, rgb(48, 50, 51) 40%, rgb(83, 95, 97) 105.8%);
-    margin-top: 0px; 
-    width:100%;
-    text-align: right;
-    height: 80px;
-    margin-bottom: 0px;
-    position: absolute;
-    padding: 0;
-
-}
-#logo{
-    height: 30px;
-    width:42px;
-    border-radius:10px;
-    position: absolute;
-    top:30px;
-    left: 20px;
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: rgb(33,33,41);
+    color:white;
+    font-size: 16px;
+  }
+  
+  /*header section*/
+  header{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
     z-index: 10;
+    opacity: 1;
 
-
-}
-h1 {
-    position: absolute;
-    top:15px;
-    left: 70px;
-    color: lightgray;
-    font-family: Arial, Helvetica, sans-serif;
-    z-index: 10;
-    font-weight: bold;
-}
-li {
-    display: inline-block;
-    color: lightgray;
-    margin-right:30px;
-    margin-top:30px;
-    font-family: sans-serif;
-    font-size: 15px;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
     
-}
-#contact h3 {
-    color: aliceblue;
-}
-h2,p {
-    color:aliceblue;
-    font-family: sans-serif;
+    height:3rem;
+    align-content: center;
+  }
+ nav ul{
+  position: relative;
+  margin-right: 1.75rem;
+
+  text-align: right;
+  }
+  nav li{
+    color: white;
+    display: inline-block;
+    margin-left: 2rem;
+    }
+  nav h2 {
+    margin-left: 1.75rem;
+    text-align: left;
+   
+  }
+
+@media only screen and (max-width:480px){
+  nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  nav li{
+    color: ghostwhite;
+    display: inline-block;
+    margin-left: 0.5rem;
+    }
+
 }
 
-.describe{
-    max-width: 250px;
-    margin-left: 100px;
-    padding-top: 100px;
+/*main section*/
+  .grid{
+    display: grid;
+    grid-template-areas: "banner banner"
+                         "mission mission" 
+                         "team team"
+                         "footer footer";
+    grid-template-columns: 1fr 1fr;
+    
+    margin: 3rem 0;
+    gap: 4rem;
+    width: 100%;
+
+  }
+  body {
+    padding: auto 0;
+  }
 
 
+/*banner section*/
+
+  .banner {
+    grid-area: banner;
+    background-image: url("../css/images/library.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40rem;
+    display:flex;
+    justify-content: center;
+
+  }
+  .banner-card {
+    background-color: rgb(33,33,41);
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 12px 2px 1px rgb(248, 248, 248);
+  }
+  .banner-card h1,h2{
+    background-color: transparent;
+    text-align: center;
+  }
+  .banner-card h1{
+    font-size: 4rem;
+    text-shadow: 1px 1px 2px rgb(214, 206, 206);
+  }
+  .banner-card h2 {
+    margin: auto 0.5rem;
+  }
+/*mission section*/
+  .mission{
+    grid-area:mission;
+    background-color: rgb(230, 227, 227);
+    max-width: 88%;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 10px 12px 2px 1px rgb(64, 68, 90);
+  }
+.mission h3{
+  font-style: italic;
+  font-size: 2em;
+  background-color: transparent;
+  text-align: center;
+  color:rgb(31, 31, 31);
+  text-decoration: underline;
+  margin-bottom: 0.75em;
 }
-
-h2 {
-    font-family: baskerville;
+.mission p{
+  max-width: 65%;
+  text-align: center;
+  color:rgb(31, 31, 31);
+  background-color: transparent;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  font-weight:  700;
 }
-.ideas {
-    max-width: 300px;
-    text-align: right;
-    margin-right: 50px;
-    margin-left: auto;
+/*meet the team section*/ 
+  .team {
+    grid-area: team;
+    background-color: ghostwhite;
+    border-radius: 15px;
+
+  }
+.team h3{
+  text-align: center;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  font-size: 4rem;
+  margin: 5px;
+ 
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto
+
   
 }
+#one, #two{
+  background-color: rgb(76, 82, 101);
+  border-radius: 10px;
+}
 
-main {
+.card{
+  display: grid;
+  grid-template-rows: 400px 30px 30x;
+  margin: 1rem auto;
+
+}
+ #one img{
     
-    margin: 0;
-    
-}
-.bg {
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
-  z-index: -1;
-}
-.bg img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
-  z-index: -1;
-}
+    max-width: 300px;
+    height: auto;
+    display:block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: solid 1px whitesmoke;
+  
+  }
+  #two img{
+    max-width: 300px;
+    height: auto;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: solid 1px whitesmoke;
+  }
+  h4 {
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 3px 3px;
+    margin: 2px auto;
+    background-color: transparent;
+  }
+  h5{
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    padding: 3px 3px;
+    margin: 2px auto;
+    background-color: transparent;
+    color: rgb(174, 192, 209);
+  }
+/*footer section*/
+  footer {
+    position: relative;
+    grid-area: footer;
+    background-color: #323949 ;
+    width:100%;
+    bottom :0;
+  }
+
+ footer ul{
+  text-align: center;
+  background-color: transparent;
+ }
+ .contact{
+  background-color: transparent;
+ }
+
+ #email{
+  text-decoration: underline;
+ }
+  footer ul li{
+  display: inline-block;
+  border: solid 2px lime;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem;
+ }
+ h6{
+  background-color: #323949
+ }
